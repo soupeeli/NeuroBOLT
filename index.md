@@ -2,14 +2,14 @@
 layout: project_page
 permalink: /
 
-title: On Computable Numbers, with an Application to the Entscheidungsproblem
+title: NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping
 authors:
-    A. M. Turing
+    Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
 affiliations:
-    King's College, Cambridge
+    Vanderbilt University, Vanderbilt University Medical Center
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
 video: https://www.youtube.com/results?search_query=turing+machine
-code: https://github.com/topics/turing-machines
+code: https://github.com/soupeeli/NeuroBOLT
 data: https://huggingface.co/docs/datasets
 ---
 
