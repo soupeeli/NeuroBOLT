@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping
+title: NeuroBOLT - Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping
 authors:
     Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
 affiliations:
