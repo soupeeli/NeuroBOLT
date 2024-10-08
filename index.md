@@ -4,7 +4,8 @@ permalink: /
 
 title: NeuroBOLT - Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping
 authors:
-    Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
+    Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, 
+    Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
 affiliations:
     Vanderbilt University
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
