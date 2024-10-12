@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping, NeuroBOLT.">
+  <meta name="keywords" content="NeuroBOLT, EET2fMRI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindBridge: Cross-Subject Brain Decoding Framework</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHQGWV0Q63"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-GHQGWV0Q63');
+  </script>
+  <script>
+    function showVideo() {
+      var showGifButton = document.getElementById("showGifButton");
+      showGifButton.style.display = "none";
+      
+      var brainVideo = document.getElementById("brainVideo");
+      brainVideo.style.display = "inline-block";
+    }
+    function showButton() {
+      var brainVideo = document.getElementById("brainVideo");
+      brainVideo.style.display = "none";
+      
+      var showGifButton = document.getElementById("showGifButton");
+      showGifButton.style.display = "inline-block";
+    }
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/gif" href="./static/images/neurobolt_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://www.cchanglab.net/home">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/abs/2311.04234">
+            SirenED
+          </a>
+          <!-- <a class="navbar-item" href="https://littlepure2333.github.io/GFlow">
+            GFlow
+          </a> -->
+<!--           <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://soupeeli.github.io/">Yamin Li</a>,</span>
+            <span class="author-block">
+              <a href="https://angeloucn.github.io/">Ange Lou</a>,</span>
+            <span class="author-block">
+              <a href="https://www.vanderbilt.edu/vise/visepeople/ziyuan-roger-xu/">Ziyuan Xu</a>,
+            </span>
+            <span class="author-block">
+              <a href="">Shengchao Zhang</a>
+            </span>
+            <span class="author-block">
+              <a href="">Shiyu Wang</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.vumc.org/surgical-sciences/person/dario-j-englot-md-phd">Dario J. Englot</a>
+            </span>
+            <span class="author-block">
+              <a href="https://skolouri.github.io/">Soheil Kolouri</a>
+            </span>
+            <span class="author-block">
+              <a href="https://dcmoyer.github.io/">Daniel Moyer</a>
+            </span>
+            <span class="author-block">
+              <a href="https://rgbayrak.github.io/">Roza G. Bayrak</a>
+            </span>
+            <span class="author-block">
+              <a href="https://engineering.vanderbilt.edu/bio/?pid=catie-chang">Catie Chang</a>
+            </span>
+
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Vanderbilt University</span>
+          </div>
+
+          <div class="is-size-4 publication-authors" style="margin-top: 12px;">
+            <span class="author-block"><b>NeurIPS 2024</b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2410.05341"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.05341"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser ">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/neurobolt_overview.png" alt="teaser" style="width: 100%; height: auto;">
+      <h2 class="subtitle has-text-centered">
+        Our proposed <span class="dnerf"><b>NeuroBOLT</b></span> can reconstruct fMRI timecourse from arbitrary region-of-interest from EEG, benefiting from the EEG representation learning from multi-dimensional aspects - spatial, temporal, and spectral. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          
+          <p>
+            <font color="#ba7b86"><b>Functional magnetic resonance imaging (fMRI)</b></font> is an indispensable tool in modern neuroscience, 
+            providing a non-invasive window into whole-brain dynamics at millimeter-scale spatial resolution. 
+            However, <font color="#ba7b86"><b>fMRI</b></font> is constrained by issues such as <b>high operation costs</b> and <b>immobility</b>. 
+            With the rapid advancements in cross-modality synthesis and brain decoding, the use of deep neural 
+            networks has emerged as a promising solution for inferring whole-brain, high-resolution <font color="#ba7b86"><b>fMRI</b></font> features 
+            directly from <font color="#698cbf"><b>electroencephalography (EEG)</b></font>, a <b>more widely accessible</b> and <b>portable</b> neuroimaging modality. 
+            Nonetheless, the complex projection from neural activity to <font color="#ba7b86"><b>fMRI</b></font> hemodynamic responses and the spatial 
+            ambiguity of <font color="#698cbf"><b>EEG</b></font> pose substantial challenges both in modeling and interpretability. 
+            Relatively few studies to date have developed approaches for <font color="#698cbf"><b>EEG</b></font><b>-<font color="ba7b86">fMRI</font> translation</b>, and although they have made significant strides, 
+            the inference of <font color="#ba7b86"><b>fMRI</b></font> signals in a given study has been limited to a small set of brain areas and to a single condition 
+            (i.e., either resting-state or a specific task). The capability to predict <font color="#ba7b86"><b>fMRI</b></font> signals in other brain areas, 
+            as well as to generalize across conditions, remain critical gaps in the field. 
+          </p>
+          <p>
+            To tackle these challenges, 
+            we introduce a novel and generalizable framework: <span class="dnerf"><b>NeuroBOLT</b></span>, i.e., <b>Neuro-to-BOLD Transformer</b>, 
+            which leverages multi-dimensional representation learning from temporal, spatial, and spectral domains to translate 
+            raw <font color="#698cbf"><b>EEG</b></font> data to the corresponding <font color="#ba7b86"><b>fMRI</b></font> activity signals across 
+            the brain. Our experiments demonstrate that <span class="dnerf"><b>NeuroBOLT</b></span> 
+            effectively reconstructs resting-state <font color="#ba7b86"><b>fMRI</b></font> signals from primary sensory, high-level cognitive areas, and 
+            deep subcortical brain regions, achieving state-of-the-art accuracy and significantly advancing the integration of these two modalities.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <img src="./static/images/neurobolt_model.png" alt="method" style="width: 80%; height: auto;">
+        <div class="content has-text-justified">
+          <!-- <p>
+            <span class="dnerf"><b>MindBridge</b></span> first adaptively unifies the fMRI voxels \(V_s\) to a unified size \(v_s=f(V_s)\) 
+            using a biologically-inspired aggregation function \(f\). Then <span class="dnerf"><b>MindBridge</b></span> projects different 
+            subjects' aggregated fMRI voxels \(v_s\) to an intermediate semantic embedding 
+            \(e_s=\mathcal{E}_s(v_s)\) using a subject-wise brain embedder \(\mathcal{E}_s\). 
+            To ensure that semantic embeddings from different subjects reside in a common shared space, 
+            we propose a novel cyclic fMRI reconstruction mechanism. This mechanism relies on an additional 
+            subject-wise brain builder \(\mathcal{B}_s\) to reconstruct the unified fMRI voxels \(\hat{v}_s=\mathcal{B}_s(e_s)\).
+            Once the semantic embeddings are obtained, a brain translator \(\mathcal{T}\) translates them 
+            into two embeddings, \((\hat{e}_I, \hat{e}_T)=\mathcal{T}(e_s)\), representing the predicted 
+            CLIP image and text embeddings, which are utilized to reconstruct images through versatile diffusion model.
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 ">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Resting-state intra-subject prediction results.</b> (A) The parcellation of the chosen ROIs. (B) The distribution of 
+            prediction performance (Pearson's correlation values), with example time-series reconstructions that represent 
+            performance levels near the mean (indicated by the small grey arrow in the histogram). 
+          </p>
+          <img src="./static/images/neurobolt_intrarest.png" alt="cross-subject results" style="width: 100%; height: auto;">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>Examples of reconstruction of the unseen scans.</b> Scans with the <b>median</b> performance are shown.
+          </p>
+          <div style="width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center;">
+            <img src="./static/images/neurobolt_interrest.png" alt="cross-subject results" style="width: 80%; margin: auto;">
+            <p>
+              <span style="color: gray; "><br />Please refer to the paper linked above for additional visualizations, as well as detailed quantitative and ablation studies.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{li2024neuroboltrestingstateeegtofmrisynthesis,
+      title={NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping}, 
+      author={Yamin Li and Ange Lou and Ziyuan Xu and Shengchao Zhang and Shiyu Wang and Dario J. Englot and Soheil Kolouri and Daniel Moyer and Roza G. Bayrak and Catie Chang},
+      year={2024},
+      eprint={2410.05341},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV},
+      url={https://arxiv.org/abs/2410.05341}, 
+}
+</code></pre>
+  </div>
+  <!-- <div style="max-width: 300px; margin: 0 auto;">
+    <script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=RS-h-PPd6DfhQaf8Lc1z8fVNaqcq1hrS4yJRa2HWah8&cl=ffffff&w=a"></script>
+  </div> -->
+
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <!-- <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/files/MindBridge_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/littlepure2333" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+      <button id="showGifButton" onclick="showVideo()" style="display: inline-block; border: none; background: none; font-size: 1.6em; width: auto; height: auto; vertical-align: bottom; margin-left: -7px">
+        🤯
+      </button>
+      <video id="brainVideo" src="static/images/brain.mp4" onclick="showButton()" autoplay muted loop style="width: auto; height: 26px; display: none; vertical-align:sub"></video>
+    </div> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Huge thanks to <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerifies</a> for sharing the project page template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
