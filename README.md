@@ -3,6 +3,7 @@
 This repo contains the code of our NeurIPS 2024 paper: 
 **"NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping"**
 Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
+
 Vanderbilt University
 
 -[📄 Paper](https://arxiv.org/abs/2410.05341) - [🖼️ Project Page](https://soupeeli.github.io/NeuroBOLT/) - [🪧Poster](https://neurips.cc/media/PosterPDFs/NeurIPS%202024/93044.png?t=1733617950.057914)
