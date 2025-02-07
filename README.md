@@ -86,5 +86,16 @@ or
   journal={arXiv preprint arXiv:2410.05341},
   year={2024}
 }
+
+and our earlier work:
+@inproceedings{li2024leveraging,
+  title={Leveraging sinusoidal representation networks to predict fMRI signals from EEG},
+  author={Li, Yamin and Lou, Ange and Xu, Ziyuan and Wang, Shiyu and Chang, Catie},
+  booktitle={Medical Imaging 2024: Image Processing},
+  volume={12926},
+  pages={795--800},
+  year={2024},
+  organization={SPIE}
+}
 ```
 
