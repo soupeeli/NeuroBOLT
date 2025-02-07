@@ -2,6 +2,7 @@
 
 This repo contains the code of our NeurIPS 2024 paper: 
 **"NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping"**
+
 Yamin Li, Ange Lou, Ziyuan Xu, Shengchao Zhang, Shiyu Wang, Dario J. Englot, Soheil Kolouri, Daniel Moyer, Roza G. Bayrak, Catie Chang
 
 Vanderbilt University
@@ -46,7 +47,7 @@ The `data` folder can be stored in any location of your choice. If it's not plac
 **Configure the model for your dataset:**
    - Update the default configurations in `main.py` under # ---- Dataset specific info ---- to match your dataset, or specify them when running the command.
    - Define your dataset loader with the appropriate channel names in `def get_dataset(args)` in `main.py`.
-   - If needed, you can create a new dataloader in `get_datasets.py ` to properly handle your dataset format。
+   - If needed, you can create a new dataloader in `get_datasets.py ` to properly handle your dataset format.
    - If you would like to do **cross-subject training**, use the example `scan_split_example.xlsx` file to define the train/val/test split of all scans. Ensure that if a subject has multiple scans, all scans from the same subject should belong to the same set.
   
 
