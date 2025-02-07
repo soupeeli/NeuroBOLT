@@ -23,7 +23,9 @@ Create environment and install required packages:
    ```
    
 ## Dataset & Checkpoints
-Organize your dataset and pretrained weights as follows
+- Before training, please download the checkpoint from LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
+
+- Organize your dataset and pretrained weights as follows
 ```
 NeuroBOLT/
 ├── checkpoints/          # Store model weights here
