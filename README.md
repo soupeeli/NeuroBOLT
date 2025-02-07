@@ -23,7 +23,7 @@ Create environment and install required packages:
    ```
    
 ## Dataset & Checkpoints
-- Before training, please download the checkpoint from LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
+- Before training, please download the checkpoint of LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
 
 - Organize your dataset and pretrained weights as follows
 ```
