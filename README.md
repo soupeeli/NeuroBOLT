@@ -25,7 +25,7 @@ Create environment and install required packages:
    
 ## Dataset & Checkpoints
 - Before training, please download the checkpoint of LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
-
+- The resting-state dataset used in this paper can be downloaded from [here](https://huggingface.co/datasets/NeurdyLab/NeuroBOLT).
 - Organize your dataset and pretrained weights as follows
 ```
 NeuroBOLT/
@@ -33,8 +33,8 @@ NeuroBOLT/
 ├── data/
 │   ├── EEG/              # Store EEG dataset (EEGLAB format) files
 │   ├── fMRI_difumo/      # Store fMRI ROI time series files
-│   ├── fMRI/             # Store fMRI data (.nii file)
-│   ├── motions/          # Store fMRI motion parameters or other confounds
+│   ├── fMRI/             # Store fMRI data (.nii file) if you are starting from 4d fMRI data
+│   ├── motions/          # Store fMRI motion parameters or other confounds if you are starting from 4d fMRI data
 ```
 The `data` folder can be stored in any location of your choice. If it's not placed within the code directory, simply update the dataset_root configuration in `main.py` to reflect the correct path.
 
@@ -64,6 +64,7 @@ Run `main.py` for training, e.g., to predict `Thalamus` fMRI activity:
    
 ## TODO List
 - [x]  Release code.
+- [x]  Release dataset.
 - [ ]  Upload inference demo
 - [ ]  Release pretrained checkpoints.
 
