@@ -1,0 +1,20 @@
+# Ignore data contents but keep placeholder
+data/**
+!data/.gitkeep
+
+# If a top-level dataset folder is used, treat similarly
+dataset/**
+!dataset/.gitkeep
+
+# Python cache/bytecode
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore checkpoints contents but keep placeholder
+checkpoints/**
+!checkpoints/.gitkeep
+
+# Ignore all Jupyter notebooks
+*.ipynb

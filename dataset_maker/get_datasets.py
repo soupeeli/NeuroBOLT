@@ -14,10 +14,10 @@ import pickle
 
 
 
-def download_vu_dataset(sub, scan, path_to_dataset, output_eegmneraw=False, out_eegchan='EEG'):
+def download_vu_dataset(sub, scan, path_to_dataset, output_eegmneraw=True, out_eegchan='EEG'):
     patient = 'sub' + '{:02d}'.format(int(sub)) + '-scan' + '{:02d}'.format(int(scan))
-    eeg_path_set_file = os.path.join(path_to_dataset, 'EEG_set', f'{patient}_eeg_pp.set')
-    fMRI_path_difumo = os.path.join(path_to_dataset, 'fMRI_difumo', f'{patient}_difumo_roi.pkl')
+    eeg_path_set_file = os.path.join(path_to_dataset, 'EEG', f'{patient}_eeg.set')
+    fMRI_path_difumo = os.path.join(path_to_dataset, 'fMRI_difumo', f'{patient}_difumo64_roi.pkl')
     new_fps = 200
 
     # ----- Load and preprocess EEG -----

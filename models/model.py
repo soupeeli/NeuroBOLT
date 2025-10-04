@@ -311,6 +311,7 @@ class NeuroBOLTransformer(nn.Module):
 
         self.mss_module = MSSEncoder(num_roi=num_roi, emb_size=embed_dim, n_channels=EEG_channel, num_heads=8, scale1=100,
                                      input_length=EEG_length, win_level=win_level)
+        self.head_act = nn.GELU()
 
         if self.pos_embed is not None:
             trunc_normal_(self.pos_embed, std=.02)
@@ -402,7 +403,7 @@ class NeuroBOLTransformer(nn.Module):
         x_tmp = self.forward_ts_features(x, input_chans=input_chans, return_patch_tokens=return_patch_tokens,
                                          return_all_tokens=return_all_tokens, **kwargs)
         x_mss = self.mss_module(rearrange(x, 'B N A T -> B N (A T)'), input_chans=input_chans_spect)
-        x = self.head(x_mss + x_tmp)
+        x = self.head(self.head_act(x_mss + x_tmp)) # here adding activation function is optional, you can also directly add x_mss and x_tmp
         return x
 
 
