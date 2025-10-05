@@ -74,7 +74,7 @@ Run `main.py` for training, e.g., to predict `Thalamus` fMRI activity:
 - [x]  Release code.
 - [x]  Release dataset.
 - [x]  Upload inference demo
-- [x]  Release pretrained checkpoints and dataset.
+- [x]  Release pretrained checkpoints.
 
 
 ## 📚 Reference
