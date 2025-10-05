@@ -13,7 +13,7 @@ Vanderbilt University
 ![overview](./assets/overview.png)
 
 
-## Setup
+## 🔩 Setup
 Create environment and install required packages:
    ```bash
    conda create -n neurobolt python=3.9
@@ -23,9 +23,13 @@ Create environment and install required packages:
    pip install -r requirements.txt
    ```
    
-## Dataset & Checkpoints
-- Before training, please download the checkpoint of LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
-- The resting-state dataset used in this paper can be downloaded from [here](https://huggingface.co/datasets/NeurdyLab/NeuroBOLT).
+## 💾 Dataset & Checkpoints
+**Checkpoints**
+- Please find checkpoints [here on Huggingface 🤗](https://huggingface.co/ssssssup/NeuroBOLT).
+- If you are training the model from scratch, please download the checkpoint of LaBraM `labram-base.pth` from [here](https://github.com/935963004/LaBraM/tree/main/checkpoints), and place it under `checkpoints` folder.
+
+**Dataset**
+- Our dataset is publicly available [here](https://huggingface.co/datasets/NeurdyLab/NeuroBOLT).
 - Organize your dataset and pretrained weights as follows
 ```
 NeuroBOLT/
@@ -38,11 +42,15 @@ NeuroBOLT/
 ```
 The `data` folder can be stored in any location of your choice. If it's not placed within the code directory, simply update the dataset_root configuration in `main.py` to reflect the correct path.
 
-## Run Experiments
-### Prepare Data
-**EEG:** The current scripts require preprocessed EEG data in EEGLAB `.set` format as input.  If needed, you may write your own preprocessing code to prepare the data accordingly. Notably, if you want to train the model, the EEG `.set` file should include event markers for synchronization with fMRI data collection. 
+## 🚀 Quick Tutorial for Inference
+You can try NeuroBOLT inference directly in your browser using Google Colab. This short tutorial walks you through the essential steps to run inference with our pretrained model: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1e7mfxQqth4mcfqlhTypgB5Q0gYPNbT-y?usp=sharing)
 
-**fMRI:** Prepare your fMRI data using `making_difumo.py`. This script convert fMRI `.nii` file into ROI time series using [DiFuMo](https://github.com/Parietal-INRIA/DiFuMo) atlas. You can modify the script as needed to adapt it to your specific fMRI dataset. You can also use a different brain atlas by creating a custom script for ROI extraction, as long as the output format remains consistent.
+
+## 🧠 Run Experiments
+### Prepare Data
+- **EEG:** The current scripts require preprocessed EEG data in EEGLAB `.set` format as input.  If needed, you may write your own preprocessing code to prepare the data accordingly. Notably, if you want to train the model, the EEG `.set` file should include event markers for synchronization with fMRI data collection. 
+
+- **fMRI:** Prepare your fMRI data using `making_difumo.py`. This script convert fMRI `.nii` file into ROI time series using [DiFuMo](https://github.com/Parietal-INRIA/DiFuMo) atlas. You can modify the script as needed to adapt it to your specific fMRI dataset. You can also use a different brain atlas by creating a custom script for ROI extraction, as long as the output format remains consistent.
 
 **Configure the model for your dataset:**
    - Update the default configurations in `main.py` under # ---- Dataset specific info ---- to match your dataset, or specify them when running the command.
@@ -62,14 +70,16 @@ Run `main.py` for training, e.g., to predict `Thalamus` fMRI activity:
       python main.py --batch_size 64 --finetune ./checkpoints/labram-base.pth --labels_roi Thalamus --dataset VU --train_test_mode full_test --split_index_sheet ./scan_split_example.xlsx
       ```
    
-## TODO List
+## 🔜 TODO List
 - [x]  Release code.
 - [x]  Release dataset.
-- [ ]  Upload inference demo
-- [ ]  Release pretrained checkpoints.
+- [x]  Upload inference demo
+- [x]  Release pretrained checkpoints and dataset.
 
 
-## Reference
+## 📚 Reference
+If you find our work helpful or use our dataset, please consider citing our paper. Thank you ✨✨✨! 
+
 ```bibtex
 @inproceedings{
 li2024neurobolt,
@@ -78,15 +88,6 @@ author={Yamin Li and Ange Lou and Ziyuan Xu and Shengchao Zhang and Shiyu Wang a
 booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
 year={2024},
 url={https://openreview.net/forum?id=y6qhVtFG77}
-}
-
-or
-
-@article{li2024neurobolt,
-  title={NeuroBOLT: Resting-state EEG-to-fMRI Synthesis with Multi-dimensional Feature Mapping},
-  author={Li, Yamin and Lou, Ange and Xu, Ziyuan and Zhang, Shengchao and Wang, Shiyu and Englot, Dario J and Kolouri, Soheil and Moyer, Daniel and Bayrak, Roza G and Chang, Catie},
-  journal={arXiv preprint arXiv:2410.05341},
-  year={2024}
 }
 
 and our earlier work:
