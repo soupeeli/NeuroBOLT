@@ -17,7 +17,7 @@ Vanderbilt University
 Create environment and install required packages:
    ```bash
    conda create -n neurobolt python=3.9
-   conda activate labram
+   conda activate neurobolt
    conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
    conda install tensorboardX
    pip install -r requirements.txt
